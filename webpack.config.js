@@ -3,13 +3,13 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -17,50 +17,50 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
         use: [
           {
-            loader: MiniCSSExtractPlugin.loader
+            loader: MiniCSSExtractPlugin.loader,
           },
-          "css-loader"
-        ]
+          'css-loader',
+        ],
       },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: MiniCSSExtractPlugin.loader
+            loader: MiniCSSExtractPlugin.loader,
           },
-          "css-loader",
-          "sass-loader"
-        ]
-      }
-    ]
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
+      template: './public/index.html',
+      filename: './index.html',
     }),
     new MiniCSSExtractPlugin({
-      filename: "assets/[name].css"
-    })
+      filename: 'assets/[name].css',
+    }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 3005
-  }
-}
+    port: 3005,
+  },
+};
