@@ -58,7 +58,7 @@ const Payment = () => {
             buttonStyles={buttonStyles}
             amount={amount}
             onPaymentStart={() => console.log('Start')}
-            onPaymentSuccess={handlePaymentSuccess}
+            onPaymentSuccess={(data) => handlePaymentSuccess(data)}
             onPaymentError={(error) => console.log(error)}
             onPaymentCancel={(data) => console.log(data)}
           />
