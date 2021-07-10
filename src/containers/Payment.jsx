@@ -25,7 +25,6 @@ const Payment = () => {
   const amount = handleSumTotal(cart);
 
   const handlePaymentSuccess = (data) => {
-    console.log(data);
     if (data.status === 'COMPLETED') {
       const newOrder = {
         buyer,
@@ -36,6 +35,8 @@ const Payment = () => {
       history.push('/checkout/success');
     }
   };
+
+  // TODO: ADD FUNCTIONS TO HANDLE PAYMENT ERROR AND CANCELATION
 
   return (
     <div className="Payment">
