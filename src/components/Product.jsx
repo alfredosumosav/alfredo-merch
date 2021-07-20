@@ -11,7 +11,7 @@ const Product = ({ product, handleAddToCart }) => (
       <p>{product.description}</p>
     </div>
     <button type="button" onClick={handleAddToCart(product)}>
-      Comprar
+      Buy
     </button>
   </div>
 );
