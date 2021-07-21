@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import initialState from '../initialState';
 
-const API = 'http://localhost:1337/products';
+// const API = 'http://localhost:1337/products'; // use it locally
+const API2 = 'https://alfredo-merch-api.alfredosumosa.workers.dev'; // use it in production as an example
 
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
@@ -11,7 +12,7 @@ const useInitialState = () => {
   useEffect(() => {
     // create a scoped async function in the hook
     async function fetchProducts() {
-      const response = await axios(API);
+      const response = await axios(API2);
       setProducts(response.data);
     }
 
