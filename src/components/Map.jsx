@@ -8,8 +8,8 @@ const Map = ({ data }) => {
   };
 
   const defaultCenter = {
-    lat: data.lat,
-    lng: data.lng,
+    lat: Number(data.lat),
+    lng: Number(data.lng),
   };
 
   return (
