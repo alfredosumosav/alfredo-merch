@@ -4,11 +4,12 @@
   "description": "Buy Merch from Alfredo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
     "build": "webpack --mode production",
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "lint": "eslint src/ --fix"
+    "lint": "eslint src/ --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "store",
@@ -36,11 +37,13 @@
     "@babel/eslint-parser": "^7.14.7",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^5.2.6",
     "dotenv-webpack": "^7.0.3",
+    "enzyme": "^3.11.0",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -51,6 +54,7 @@
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
     "husky": "^7.0.0",
+    "jest": "^27.0.6",
     "mini-css-extract-plugin": "^2.0.0",
     "prettier": "^2.3.2",
     "sass": "^1.35.1",
@@ -64,5 +68,14 @@
       "pre-commit": "npm run test && npm run lint",
       "pre-push": "npm run test && npm run lint"
     }
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(styl|css)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jsdom"
   }
 }
