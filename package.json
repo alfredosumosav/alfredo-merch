@@ -68,5 +68,14 @@
       "pre-commit": "npm run test && npm run lint",
       "pre-push": "npm run test && npm run lint"
     }
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(styl|css)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jsdom"
   }
 }
