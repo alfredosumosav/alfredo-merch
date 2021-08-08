@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { mount } from 'enzyme';
+import { create } from 'react-test-renderer';
 import Footer from '../../components/Footer';
 
 describe('<Footer />', () => {
@@ -12,5 +13,12 @@ describe('<Footer />', () => {
 
   test('Title Renders', () => {
     expect(footer.find('.Footer-title').text()).toEqual('Alfredo Merch');
+  });
+});
+
+describe('Footer Snapshot', () => {
+  test('Footer renders correctly', () => {
+    const footer = create(<Footer />);
+    expect(footer.toJSON()).toMatchSnapshot();
   });
 });

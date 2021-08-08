@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Snapshot Footer renders correctly 1`] = `
+<div
+  className="Footer class"
+>
+  <p
+    className="Footer-title"
+  >
+    Alfredo Merch
+  </p>
+  <p
+    className="copy"
+  >
+    All Lefts Reserved
+  </p>
+</div>
+`;
