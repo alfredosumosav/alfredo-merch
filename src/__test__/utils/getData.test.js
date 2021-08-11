@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import getData from '../../utils/getData';
 
 describe('Fetch API', () => {
