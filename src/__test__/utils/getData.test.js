@@ -9,7 +9,7 @@ describe('Fetch API', () => {
   test('Call an API and return data', () => {
     fetch.mockResponseOnce(JSON.stringify({ data: '12345' }));
 
-    getData('https://googles.com').then((response) => {
+    getData('https://google.com').then((response) => {
       expect(response.data).toEqual('12345');
     });
     expect(fetch.mock.calls[0][0]).toEqual('https://google.com');
