@@ -22,7 +22,7 @@
     "api"
   ],
   "author": "alfredosumosav",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@react-google-maps/api": "^2.2.0",
     "axios": "^0.21.1",
